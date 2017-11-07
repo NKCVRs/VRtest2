@@ -19,14 +19,14 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer == true)
         {
             PlayerID = 1;
-            Camera1.SetActive(true);
-            Camera2.SetActive(false);
+            Camera1.GetComponent<Camera>().depth = 1;
+            Camera2.GetComponent<Camera>().depth = 0;
         }
         else if (isLocalPlayer == false)
         {
             PlayerID = 2;
-            Camera2.SetActive(true);
-            Camera1.SetActive(false);
+            Camera2.GetComponent<Camera>().depth = 1;
+            Camera1.GetComponent<Camera>().depth = 0;
         }
     }
 
