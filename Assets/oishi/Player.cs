@@ -6,8 +6,28 @@ public class Player : NetworkBehaviour
 {
     public GameObject Sphere;
 
+    public GameObject Camera1;
+    public GameObject Camera2;
+
+    int PlayerID;
+
     void Start()
     {
+        Camera1 = GameObject.FindGameObjectWithTag("MainCamera");
+        Camera2 = GameObject.FindGameObjectWithTag("Camera");
+
+        if (isLocalPlayer == true)
+        {
+            PlayerID = 1;
+            Camera1.SetActive(true);
+            Camera2.SetActive(false);
+        }
+        else if (isLocalPlayer == false)
+        {
+            PlayerID = 2;
+            Camera2.SetActive(true);
+            Camera1.SetActive(false);
+        }
     }
 
     void Update()
