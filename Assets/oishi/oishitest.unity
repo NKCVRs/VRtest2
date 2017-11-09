@@ -198,7 +198,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994500353}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &994500355
 Behaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -287,7 +287,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1366031664}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &1366031666
 Behaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1625805225875978, guid: bd11cd541a007e344a238d62b397d273,
+  m_PlayerPrefab: {fileID: 1111569301684556, guid: c531c91084f088248ac159f1f9e68167,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
