@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/oishi/oishitest.unity
     guid: 95eeeed58099723499438f354f889495
+  - enabled: 1
+    path: Assets/vs.unity
+    guid: b311d6d8e4faef944b84077df9bf4bed

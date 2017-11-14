@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
     [RequireComponent(typeof (ThirdPersonCharacter))]
-    public class ThirdPersonUserControl : MonoBehaviour
+    public class ThirdPersonUserControl : NetworkBehaviour
     {
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
