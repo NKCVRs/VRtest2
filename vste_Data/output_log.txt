@@ -5,7 +5,7 @@ Direct3D:
     Renderer: Intel(R) HD Graphics Family (ID=0xa16)
     Vendor:   Intel
     VRAM:     2103 MB
-    Driver:   20.19.15.4380
+    Driver:   20.19.15.4549
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -19,19 +19,19 @@ Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\Unit
 Loading C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.138 seconds
+- Completed reload, in  0.252 seconds
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\vste_Data\Managed\System.dll (this message is harmless)
 desktop: 2560x1440 59Hz; virtual: 2560x1440 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.378545 ms
+UnloadTime: 2.478014 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1180 -> priority: 1 
-  Thread -> id: 1ddc -> priority: 1 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {216668}, last rec time {214666} rtt {2} timeout {2000}
-ClientDisconnected due to error: Timeout
+  Thread -> id: 276c -> priority: 1 
+  Thread -> id: 2648 -> priority: 1 
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:60330} time {62070}, last rec time {60061} rtt {10} timeout {2000}
+ServerDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
