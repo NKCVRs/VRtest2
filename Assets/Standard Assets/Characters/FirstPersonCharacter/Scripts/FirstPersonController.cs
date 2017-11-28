@@ -70,7 +70,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-
+        [ClientCallback]
         // Update is called once per frame
         private void Update()
         {
@@ -101,6 +101,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 m_PreviouslyGrounded = m_CharacterController.isGrounded;
             }
+            if (isLocalPlayer)
+            {
+                TransmitPosition();
+            }
+            else
+            {
+                LerpPosition();
+            }
         }
 
 
@@ -111,7 +119,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + .5f;
         }
 
-
+        [ClientCallback]
         private void FixedUpdate()
         {
             if (!isLocalPlayer)
@@ -157,6 +165,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 UpdateCameraPosition(speed);
 
                 m_MouseLook.UpdateCursorLock();
+                if (isLocalPlayer)
+                {
+                    TransmitPosition();
+                }
+                else
+                {
+                    LerpPosition();
+                }
             }
         }
 
@@ -281,6 +297,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+        [Client]
+        void TransmitPosition()
+        {
+            CmdProvidePositionToServer(transform.position);
+        }
+        [SyncVar]
+        private Vector3 syncPos;
+        private float easing;
+        [Command]
+        void CmdProvidePositionToServer(Vector3 pos)
+        {
+            syncPos = pos;
+        }
+        void LerpPosition()
+        {
+            transform.position = Vector3.Lerp(transform.position, syncPos, easing);
         }
     }
 }
