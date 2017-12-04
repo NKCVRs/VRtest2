@@ -89,11 +89,11 @@
     <Compile Include="Assets\Dive\Scripts\NaturalOrientation.cs" />
     <Compile Include="Assets\Dive\Scripts\OffsetCenter.cs" />
     <Compile Include="Assets\Dive\Scripts\OpenDiveSensor.cs" />
-    <Compile Include="Assets\bulletmove.cs" />
-    <Compile Include="Assets\hira_shot.cs" />
     <Compile Include="Assets\oishi\Main.cs" />
     <Compile Include="Assets\oishi\Player.cs" />
     <Compile Include="Assets\oishi\Sphere.cs" />
+    <Compile Include="Assets\shooting\bulletmove.cs" />
+    <Compile Include="Assets\shooting\hira_shot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dive\CHANGELOG.TXT" />

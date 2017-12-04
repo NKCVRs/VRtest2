@@ -28,19 +28,19 @@ public class hira_shot : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //if (!isLocalPlayer)
-        //{
-        //    return;
-        //}
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         remaining_bullets.text = magagine.ToString() + "/" + submagine.ToString();
         time += Time.deltaTime;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        transform.rotation = Quaternion.LookRotation(ray.direction);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //transform.rotation = Quaternion.LookRotation(ray.direction);
+        //RaycastHit hit;
+        //if (Physics.Raycast(ray, out hit))
+        //{
             //gameObject.transform.position=hit.point;
-        }
+        //}
         keyInput();
 	}
     //private IEnumerator shot(string s)
@@ -69,8 +69,11 @@ public class hira_shot : NetworkBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            reloadflg = true;
-            Invoke("Reload", 1);
+            if (magagine != 30)
+            {
+                reloadflg = true;
+                Invoke("Reload", 1);
+            }
             
         }
     }
@@ -86,7 +89,7 @@ public class hira_shot : NetworkBehaviour {
     }
     void Reload()
     {
-        if (magagine != 30&&magagine+submagine>=30)
+        if (magagine != 30 && magagine+submagine>=30)
         {
             
             int fullmag = 30;
@@ -95,7 +98,7 @@ public class hira_shot : NetworkBehaviour {
             magagine += soudan;
             reloadflg = false;
         }
-        if (magagine != 30 && magagine+submagine < 30)
+        else if (magagine != 30 && magagine+submagine < 30)
         {
             int nowmag = magagine;
             magagine = magagine + submagine;
