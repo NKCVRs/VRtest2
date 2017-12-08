@@ -89,7 +89,10 @@
     <Compile Include="Assets\Dive\Scripts\NaturalOrientation.cs" />
     <Compile Include="Assets\Dive\Scripts\OffsetCenter.cs" />
     <Compile Include="Assets\Dive\Scripts\OpenDiveSensor.cs" />
+    <Compile Include="Assets\Maze\EnemyMove.cs" />
+    <Compile Include="Assets\Maze\EnemyMove2.cs" />
     <Compile Include="Assets\Maze\Maze_Create.cs" />
+    <Compile Include="Assets\Maze\NaviAgent.cs" />
     <Compile Include="Assets\oishi\Main.cs" />
     <Compile Include="Assets\oishi\Player.cs" />
     <Compile Include="Assets\oishi\Sphere.cs" />
