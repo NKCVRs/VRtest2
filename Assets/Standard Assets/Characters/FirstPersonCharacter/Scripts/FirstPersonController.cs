@@ -85,6 +85,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else
             {
                 m_Camera.GetComponent<Camera>().depth = 0;
+
+                Debug.Log("Local");
+                //gameObject.SetActive(false);
             }
         }
 

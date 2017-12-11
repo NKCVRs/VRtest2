@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 
+//決まった場所を周回する敵
 public class EnemyMove : MonoBehaviour {
 
     public Transform goal;
@@ -15,7 +16,11 @@ public class EnemyMove : MonoBehaviour {
 
     GameObject Player_obj;//プレイヤーのオブジェクト
 
-    Vector2 agent_pos;
+    float chase_range = 5.0f;   //追跡範囲
+
+    Vector2[] agent_pos = new Vector2[4];
+
+    float timer = 0;
 
     // Use this for initialization
     void Start()
@@ -25,49 +30,51 @@ public class EnemyMove : MonoBehaviour {
         // NavMeshAgentを取得して
         agent = GetComponent<NavMeshAgent>();
 
+        agent_pos[0] = new Vector2(8,1);
+        agent_pos[1] = new Vector2(8, 4);
+        agent_pos[2] = new Vector2(1, 4);
+        agent_pos[3] = new Vector2(1, 1);
+
         // ゴールを設定。
-        agent.destination = new Vector3(8.0f,1.5f,1.0f);
+        agent.destination = new Vector3(agent_pos[0].x, 1.5f, agent_pos[0].y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // クリックで最初の位置にもどる。
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    transform.position = start;
-        //}
+        timer += Time.deltaTime;
 
         if (isChase == false)
         {
-            if (transform.position.x == 8 && transform.position.z == 1)
+            if (IsPosition(agent_pos[0].x, agent_pos[0].y))
             {
-                agent.destination = new Vector3(8, transform.position.y, 4);
+                agent.destination = new Vector3(agent_pos[1].x, transform.position.y, agent_pos[1].y);
             }
-            else if (transform.position.x == 8 && transform.position.z == 4)
+            else if (IsPosition(agent_pos[1].x, agent_pos[1].y))
             {
-                agent.destination = new Vector3(1, transform.position.y, 4);
+                agent.destination = new Vector3(agent_pos[2].x, transform.position.y, agent_pos[2].y);
             }
-            else if (transform.position.x == 1 && transform.position.z == 4)
+            else if (IsPosition(agent_pos[2].x, agent_pos[2].y))
             {
-                agent.destination = new Vector3(1, transform.position.y, 1);
+                agent.destination = new Vector3(agent_pos[3].x, transform.position.y, agent_pos[3].y);
             }
-            else if (transform.position.x == 1 && transform.position.z == 1)
+            else if (IsPosition(agent_pos[3].x, agent_pos[3].y))
             {
-                agent.destination = new Vector3(8, transform.position.y, 1);
+                agent.destination = new Vector3(agent_pos[0].x, transform.position.y, agent_pos[0].y);
             }
         }
         else if(isChase == true)
         {
+            if (timer < 1) return;
             agent.destination = Player_obj.transform.position;
 
             //プレイヤーと敵の距離が５より離れたら
-            if (Vector2.Distance(transform.position, Player_obj.transform.position) > 5)
+            if (Vector2.Distance(transform.position, Player_obj.transform.position) > chase_range)
             {
                 isChase = false;
                 agent.destination = new Vector3(8, 1.5f, 1);
             }
-
+            timer = 0;
         }
 
 
@@ -75,7 +82,6 @@ public class EnemyMove : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward * 10000, out hit, Mathf.Infinity))
         {
-           //hit.collider.GetComponent<MeshRenderer>().material.color = Color.red;
 
            if(hit.collider.tag =="Player")
             {
@@ -83,5 +89,19 @@ public class EnemyMove : MonoBehaviour {
                 Player_obj = hit.collider.gameObject;
             }
         }
+    }
+
+    //敵が目標座標に移動したかどうかの判定
+    bool IsPosition(float x, float y)
+    {
+        bool isposX = transform.position.x > x - 0.1f && transform.position.x < x + 0.1f;
+        bool isposY = transform.position.z > y - 0.1f && transform.position.z < y + 0.1f;
+
+        if (isposX == true && isposY == true)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
