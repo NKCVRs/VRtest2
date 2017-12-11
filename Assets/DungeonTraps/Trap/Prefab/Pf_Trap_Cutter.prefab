@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 3354862}
   - component: {fileID: 2354862}
   - component: {fileID: 6554864}
+  - component: {fileID: 114546549623013232}
+  - component: {fileID: 114745730686119102}
   m_Layer: 0
   m_Name: Cutter
   m_TagString: Untagged
@@ -58,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.91, y: 0.5, z: 4.034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454862}
@@ -72,7 +74,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154862}
-  m_LocalRotation: {x: 1.7112914e-15, y: 1, z: -0.000000021855694, w: 0.0000000754979}
+  m_LocalRotation: {x: 0, y: -0.99802476, z: 0, w: -0.06282186}
   m_LocalPosition: {x: 0, y: -0.000000038146972, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -209,3 +211,48 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154860}
   m_IsPrefabParent: 1
+--- !u!114 &114546549623013232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db8fda3d76bdd64a9e81dacea2c8eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  HP: 3
+--- !u!114 &114745730686119102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 1
+  m_AssetId:
+    i0: 40
+    i1: 173
+    i2: 107
+    i3: 200
+    i4: 161
+    i5: 126
+    i6: 114
+    i7: 132
+    i8: 216
+    i9: 132
+    i10: 152
+    i11: 119
+    i12: 38
+    i13: 207
+    i14: 81
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0

@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114308905757207132}
   - component: {fileID: 114063301016118846}
   - component: {fileID: 114029127534049074}
+  - component: {fileID: 114317272461419588}
   m_Layer: 0
   m_Name: Cylinder 1
   m_TagString: Player
@@ -549,6 +550,19 @@ MonoBehaviour:
     i15: 140
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114317272461419588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694074638330936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f9047530eae264a8041dcf4e68116b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterHP: 100
+  maxhp: 100
 --- !u!114 &114935249347694350
 MonoBehaviour:
   m_ObjectHideFlags: 1
