@@ -80,14 +80,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (!isLocalPlayer)
             {
-                m_Camera.GetComponent<Camera>().depth = -1;
+                m_Camera.GetComponent<Camera>().depth = -2;
             }
             else
             {
                 m_Camera.GetComponent<Camera>().depth = 0;
 
-                Debug.Log("Local");
-                //gameObject.SetActive(false);
+                Client_Start(1);
             }
         }
 
@@ -337,6 +336,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         void LerpPosition()
         {
             transform.position = Vector3.Lerp(transform.position, syncPos, easing);
+        }
+
+        [Server]
+        private void Client_Start(int a)
+        {
+            Debug.Log("I am Client");
+            gameObject.SetActive(false);
         }
     }
 }

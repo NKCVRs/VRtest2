@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 
 //ずっと追ってくる敵
-public class EnemyMove3 : MonoBehaviour {
+public class EnemyMove3 : NetworkBehaviour
+{
 
     public Transform goal;
     Vector3 start;
@@ -43,7 +45,7 @@ public class EnemyMove3 : MonoBehaviour {
         //Rand_agent();
     }
 
-    // Update is called once per frame
+    [ServerCallback]
     void Update()
     {
         timer += Time.deltaTime;

@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 
 //ランダム移動の敵
-public class EnemyMove2 : MonoBehaviour {
+public class EnemyMove2 : NetworkBehaviour
+{
 
     public Transform goal;
     Vector3 start;
@@ -27,6 +29,14 @@ public class EnemyMove2 : MonoBehaviour {
 
     float timer = 0;
 
+    //[SyncVar]
+    Vector3 AgentPositon;   //目標の座標
+
+    void SetAgentPositon()
+    {
+        agent.destination = AgentPositon;
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -36,7 +46,7 @@ public class EnemyMove2 : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 
         // ゴールを設定。
-        agent.destination = new Vector3(8.0f,1.5f,1.0f);
+        AgentPositon = new Vector3(8.0f,1.5f,1.0f);
 
         Maze_obj = GameObject.FindGameObjectWithTag("Maze");
 
@@ -44,9 +54,16 @@ public class EnemyMove2 : MonoBehaviour {
         maze_arrey = Maze_scr.maze_arrey;
 
         Rand_agent();
+
+        setNavMesh();
     }
 
-    // Update is called once per frame
+    void setNavMesh()
+    {
+        if (!isServer) agent.speed = 0;
+    }
+
+    [ServerCallback]
     void Update()
     {
         timer += Time.deltaTime;
@@ -62,13 +79,13 @@ public class EnemyMove2 : MonoBehaviour {
         else if(isChase == true)
         {
             if (timer < 1) return;
-            agent.destination = Player_obj.transform.position;
+            AgentPositon = Player_obj.transform.position;
 
             //プレイヤーと敵の距離が５より離れたら
             if (Vector2.Distance(transform.position, Player_obj.transform.position) > chase_range)
             {
                 isChase = false;
-                agent.destination = new Vector3(8, 1.5f, 1);
+                AgentPositon = new Vector3(8, 1.5f, 1);
             }
             timer = 0;
 
@@ -89,6 +106,8 @@ public class EnemyMove2 : MonoBehaviour {
                 }
             }
         }
+
+        SetAgentPositon();
     }
 
     //目標をランダムで設定
@@ -103,7 +122,7 @@ public class EnemyMove2 : MonoBehaviour {
 
             if (maze_arrey[pos_X, pos_Y] == 0)
             {
-                agent.destination = new Vector3(pos_Y, 1.5f, pos_X);
+                AgentPositon = new Vector3(pos_Y, 1.5f, pos_X);
 
                 break;
             }
