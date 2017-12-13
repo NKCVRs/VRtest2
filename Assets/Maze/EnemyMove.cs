@@ -22,6 +22,12 @@ public class EnemyMove : NetworkBehaviour
 
     Vector2[] agent_pos = new Vector2[4];
 
+    public GameObject Maze_obj;
+    Maze_Create Maze_scr;
+    int[,] maze_arrey;
+    int pos_X = 0;
+    int pos_Y = 0;
+
     float timer = 0;
 
     //[SyncVar]
@@ -40,18 +46,32 @@ public class EnemyMove : NetworkBehaviour
         // NavMeshAgentを取得して
         agent = GetComponent<NavMeshAgent>();
 
-        agent_pos[0] = new Vector2(8,1);
-        agent_pos[1] = new Vector2(8, 4);
-        agent_pos[2] = new Vector2(1, 4);
-        agent_pos[3] = new Vector2(1, 1);
+
+        Maze_obj = GameObject.FindGameObjectWithTag("Maze");
+
+        Maze_scr = Maze_obj.GetComponent<Maze_Create>();
+        maze_arrey = Maze_scr.maze_arrey;
+
+        //agent_pos[0] = new Vector2(8,1);
+        //agent_pos[1] = new Vector2(8, 4);
+        //agent_pos[2] = new Vector2(1, 4);
+        //agent_pos[3] = new Vector2(1, 1);
+        Rand_agent();
 
         // ゴールを設定。
        AgentPositon = new Vector3(agent_pos[0].x, 1.5f, agent_pos[0].y);
+
+       //Debug.Log("X" + agent_pos[0].x + " Y" + agent_pos[0].y);
     }
 
-    [ServerCallback]
+    //[ServerCallback]
     void Update()
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
         if (isChase == false)
@@ -115,6 +135,28 @@ public class EnemyMove : NetworkBehaviour
         }
 
         return false;
+    }
+
+    //目標をランダムで設定
+    void Rand_agent()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            while (true)
+            {
+                pos_X = Random.Range(0, maze_arrey.GetLength(0));
+                pos_Y = Random.Range(0, maze_arrey.GetLength(1));
+
+                //Debug.Log("0 X" + pos_X + "Y" + pos_Y);
+
+                if (maze_arrey[pos_X, pos_Y] == 0)
+                {
+                    agent_pos[i] = new Vector2(pos_Y, pos_X);
+
+                    break;
+                }
+            }
+        }
     }
 
 }

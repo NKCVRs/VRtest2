@@ -55,17 +55,21 @@ public class EnemyMove2 : NetworkBehaviour
 
         Rand_agent();
 
-        setNavMesh();
+        //setNavMesh();
     }
 
-    void setNavMesh()
-    {
-        if (!isServer) agent.speed = 0;
-    }
+    //void setNavMesh()
+    //{
+    //    if (!isServer) agent.speed = 0;
+    //}
 
-    [ServerCallback]
     void Update()
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
 

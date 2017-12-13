@@ -42,12 +42,19 @@ public class EnemyMove3 : NetworkBehaviour
         Maze_scr = Maze_obj.GetComponent<Maze_Create>();
         maze_arrey = Maze_scr.maze_arrey;
 
+        Debug.Log("X" + transform.position.x + " Z" + transform.position.z);
+
         //Rand_agent();
     }
 
     [ServerCallback]
     void Update()
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
         if (isChase == false)
@@ -69,6 +76,7 @@ public class EnemyMove3 : NetworkBehaviour
 
         }
 
+        Debug.Log("X" + transform.position.x + " Z" + transform.position.z);
 
         //if (isPlayerChase == true)
         //{
