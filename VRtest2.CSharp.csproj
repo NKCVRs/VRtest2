@@ -98,6 +98,7 @@
     <Compile Include="Assets\Maze\Maze_Create.cs" />
     <Compile Include="Assets\Maze\NaviAgent.cs" />
     <Compile Include="Assets\Maze\Status.cs" />
+    <Compile Include="Assets\Maze\trapset.cs" />
     <Compile Include="Assets\oishi\Main.cs" />
     <Compile Include="Assets\oishi\Player.cs" />
     <Compile Include="Assets\oishi\Sphere.cs" />
