@@ -38,9 +38,20 @@ public class EnemyGenerator : NetworkBehaviour
         GameObject obj3 = (GameObject)Instantiate(Enemy_prefab[3], new Vector3(35.0f, 0.6f, 1.0f), transform.rotation);
         NetworkServer.Spawn(obj3);
 
+        //GameObject obj3 = (GameObject)Instantiate(Enemy_prefab[3], new Vector3(1.0f, 10.6f, 1.0f), transform.rotation);
+        //NetworkServer.Spawn(obj3);
+        //obj3.transform.position = new Vector3(35.0f, 10.6f, 1.0f);
+        //Debug.Log("OBJ3 X" + obj3.transform.position.x + " Z" + obj3.transform.position.z);
+
         //for (int i = 1; i < 19; i++)
         //{
         //    GameObject obj3 = (GameObject)Instantiate(Enemy_prefab[3], new Vector3(1.0f, 0.6f, i), transform.rotation);
+        //    NetworkServer.Spawn(obj3);
+        //}
+
+        //for (int i = 1; i < 35; i++)
+        //{
+        //    GameObject obj3 = (GameObject)Instantiate(Enemy_prefab[3], new Vector3(i, 0.6f, 1.0f), transform.rotation);
         //    NetworkServer.Spawn(obj3);
         //}
     }

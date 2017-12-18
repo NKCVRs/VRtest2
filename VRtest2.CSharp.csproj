@@ -97,6 +97,7 @@
     <Compile Include="Assets\Maze\EnemyMove3.cs" />
     <Compile Include="Assets\Maze\Maze_Create.cs" />
     <Compile Include="Assets\Maze\NaviAgent.cs" />
+    <Compile Include="Assets\Maze\Number_Create.cs" />
     <Compile Include="Assets\Maze\Status.cs" />
     <Compile Include="Assets\Maze\trapset.cs" />
     <Compile Include="Assets\oishi\Main.cs" />

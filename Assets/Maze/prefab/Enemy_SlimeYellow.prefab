@@ -571,6 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
+  agent: {fileID: 195255005671593910}
   mask:
     serializedVersion: 2
     m_Bits: 0
@@ -667,7 +668,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961112368627194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.003
   m_Speed: 1

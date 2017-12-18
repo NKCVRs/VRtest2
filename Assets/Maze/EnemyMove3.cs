@@ -10,7 +10,7 @@ public class EnemyMove3 : NetworkBehaviour
 
     public Transform goal;
     Vector3 start;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public LayerMask mask;
 
@@ -34,13 +34,17 @@ public class EnemyMove3 : NetworkBehaviour
     {
         // 最初の位置を覚えておく
         start = transform.position;
+
+        agent.enabled = true;
         // NavMeshAgentを取得して
-        agent = GetComponent<NavMeshAgent>();
+        //agent = GetComponent<NavMeshAgent>();
 
         Maze_obj = GameObject.FindGameObjectWithTag("Maze");
 
         Maze_scr = Maze_obj.GetComponent<Maze_Create>();
         maze_arrey = Maze_scr.maze_arrey;
+
+        //transform.position = new Vector3(35.0f, 0.0f, 1.0f);
 
         Debug.Log("X" + transform.position.x + " Z" + transform.position.z);
 
@@ -75,6 +79,9 @@ public class EnemyMove3 : NetworkBehaviour
             timer = 0;
 
         }
+
+
+        //transform.position = new Vector3(35.0f, 0.6f, 1.0f);
 
         Debug.Log("X" + transform.position.x + " Z" + transform.position.z);
 

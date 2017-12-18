@@ -10,7 +10,7 @@ public class EnemyMove2 : NetworkBehaviour
 
     public Transform goal;
     Vector3 start;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public LayerMask mask;
 
@@ -32,18 +32,16 @@ public class EnemyMove2 : NetworkBehaviour
     //[SyncVar]
     Vector3 AgentPositon;   //目標の座標
 
-    void SetAgentPositon()
-    {
-        agent.destination = AgentPositon;
-    }
 
     // Use this for initialization
     void Start()
     {
         // 最初の位置を覚えておく
         start = transform.position;
+
+        agent.enabled = true;
         // NavMeshAgentを取得して
-        agent = GetComponent<NavMeshAgent>();
+        //agent = GetComponent<NavMeshAgent>();
 
         // ゴールを設定。
         AgentPositon = new Vector3(8.0f,1.5f,1.0f);
@@ -57,6 +55,12 @@ public class EnemyMove2 : NetworkBehaviour
 
         //setNavMesh();
     }
+
+    void SetAgentPositon()
+    {
+        agent.destination = AgentPositon;
+    }
+
 
     //void setNavMesh()
     //{
