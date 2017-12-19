@@ -1495,6 +1495,7 @@ GameObject:
   - component: {fileID: 1127033554}
   - component: {fileID: 1127033553}
   - component: {fileID: 1127033557}
+  - component: {fileID: 1127033558}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1615,6 +1616,38 @@ MonoBehaviour:
   - {fileID: 222567306}
   - {fileID: 1484093281}
   - {fileID: 1224232926}
+--- !u!114 &1127033558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127033552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1153232789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2545,7 +2578,7 @@ MonoBehaviour:
   - {fileID: 1525300113898696, guid: 101a2dd283ac11c40a07a6a1e4426b12, type: 2}
   - {fileID: 1986228662070182, guid: d38544227ded26f4bb954fc0b93d2135, type: 2}
   - {fileID: 1961112368627194, guid: b6be31895ab46c04e8ae57038a710d01, type: 2}
-  - {fileID: 0}
+  - {fileID: 1173968023891570, guid: 1b37046443d0e4c42821516816d4210c, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:

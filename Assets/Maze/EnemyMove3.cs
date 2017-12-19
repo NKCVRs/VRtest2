@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine.Networking;
 
+
 //ずっと追ってくる敵
 public class EnemyMove3 : NetworkBehaviour
 {
