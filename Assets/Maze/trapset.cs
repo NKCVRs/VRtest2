@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class trapset : NetworkBehaviour {
 
@@ -15,6 +16,13 @@ public class trapset : NetworkBehaviour {
     public GameObject SpearTrap;
     private GameObject SetPrefab;
     private Vector3 clickPosition;
+    [SerializeField]
+    private GameObject pa;
+    //public Camera ca;
+    //Maze_Create Maze_scr;
+    //int[,] maze_arrey;
+    //int pos_X = 0;
+    //int pos_Y = 0;
     Set tset;
     enum Set
     {
@@ -27,6 +35,12 @@ public class trapset : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        if (!isServer)
+        {
+            pa.SetActive(false);
+            //gameObject.SetActive(false);
+            GetComponent<trapset>().enabled = false;
+        }
         Cutterremain = 5;
         Needleremain = 5;
         Bladeremain = 5;
@@ -70,7 +84,20 @@ public class trapset : NetworkBehaviour {
         {
             clickPosition = Input.mousePosition;
             clickPosition.z = 19.5f;
-            Setting();
+            clickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
+            float cx = Mathf.FloorToInt(clickPosition.x);
+            float cy = Mathf.FloorToInt(clickPosition.y);
+            clickPosition = new Vector3(cx, cy, clickPosition.z);
+            Debug.Log(clickPosition);
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.tag == "Maze")
+                {
+                    Setting();
+                }
+            }
         }
     }
     void Setting()
@@ -81,7 +108,8 @@ public class trapset : NetworkBehaviour {
                 if (Cutterremain > 0)
                 {
                     Cutterremain -= 1;
-                    Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    NetworkServer.Spawn(obj);
                 }
                 else
                 {
@@ -92,7 +120,8 @@ public class trapset : NetworkBehaviour {
                 if (Needleremain > 0)
                 {
                     Needleremain -= 1;
-                    Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    NetworkServer.Spawn(obj);
                 }
                 else
                 {
@@ -103,7 +132,8 @@ public class trapset : NetworkBehaviour {
                 if (Bladeremain>0)
                 {
                     Bladeremain -= 1;
-                    Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    NetworkServer.Spawn(obj);
                 }
                 else
                 {
@@ -114,7 +144,9 @@ public class trapset : NetworkBehaviour {
                 if (Spearremain > 0)
                 {
                     Spearremain -= 1;
-                    Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    clickPosition.z = 19f;
+                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    NetworkServer.Spawn(obj);
                 }
                 else
                 {
@@ -145,5 +177,12 @@ public class trapset : NetworkBehaviour {
     {
         SetPrefab = SpearTrap;
         tset = Set.SPEAR;
+    }
+    public void Supply()
+    {
+        Cutterremain += 5;
+        Needleremain += 5;
+        Bladeremain += 5;
+        Spearremain += 5;
     }
 }
