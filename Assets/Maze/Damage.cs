@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Damage : MonoBehaviour {
+public class Damage : NetworkBehaviour {
 
     [SerializeField]
     private float damage=30;
     [SerializeField]
     private float hp = 3;
+    [SyncVar]
+    private Vector3 nowPos;
 	// Use this for initialization
 	void Start () {
-		
+        nowPos = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame

@@ -22,7 +22,7 @@ public class Status : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         time += Time.deltaTime;
-        if (time >= 15 && gameObject.tag == "Player")
+        if (time >= 15 && gameObject.tag == "Player"&&CharacterHP!=100)
         {//体力自動回復
             Reg -= Time.deltaTime;
             if (Reg <= 0.0)

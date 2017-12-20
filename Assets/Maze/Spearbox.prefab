@@ -917,22 +917,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
+    i0: 23
+    i1: 121
+    i2: 23
+    i3: 248
+    i4: 240
+    i5: 22
+    i6: 235
+    i7: 244
+    i8: 57
+    i9: 51
+    i10: 160
+    i11: 3
+    i12: 86
+    i13: 98
+    i14: 208
+    i15: 243
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &114580431089177718
