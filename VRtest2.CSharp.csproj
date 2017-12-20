@@ -96,6 +96,7 @@
     <Compile Include="Assets\Maze\EnemyMove2.cs" />
     <Compile Include="Assets\Maze\EnemyMove3.cs" />
     <Compile Include="Assets\Maze\Maze_Create.cs" />
+    <Compile Include="Assets\Maze\MovetoCamera.cs" />
     <Compile Include="Assets\Maze\NaviAgent.cs" />
     <Compile Include="Assets\Maze\Number_Create.cs" />
     <Compile Include="Assets\Maze\Status.cs" />

@@ -85,9 +85,9 @@ public class trapset : NetworkBehaviour {
             clickPosition = Input.mousePosition;
             clickPosition.z = 19.5f;
             clickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
-            float cx = Mathf.FloorToInt(clickPosition.x);
-            float cy = Mathf.FloorToInt(clickPosition.y);
-            clickPosition = new Vector3(cx, cy, clickPosition.z);
+            float cx = Mathf.RoundToInt(clickPosition.x);
+            float cy = Mathf.RoundToInt(clickPosition.z);
+            clickPosition = new Vector3(cx, 0.5f, cy);
             Debug.Log(clickPosition);
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -108,7 +108,7 @@ public class trapset : NetworkBehaviour {
                 if (Cutterremain > 0)
                 {
                     Cutterremain -= 1;
-                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
                 else
@@ -120,7 +120,7 @@ public class trapset : NetworkBehaviour {
                 if (Needleremain > 0)
                 {
                     Needleremain -= 1;
-                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
                 else
@@ -132,7 +132,7 @@ public class trapset : NetworkBehaviour {
                 if (Bladeremain>0)
                 {
                     Bladeremain -= 1;
-                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
                 else
@@ -144,8 +144,8 @@ public class trapset : NetworkBehaviour {
                 if (Spearremain > 0)
                 {
                     Spearremain -= 1;
-                    clickPosition.z = 19f;
-                    GameObject obj=Instantiate(SetPrefab, Camera.main.ScreenToWorldPoint(clickPosition), SetPrefab.transform.rotation);
+                    clickPosition.y = 1f;
+                    GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
                 else
