@@ -140,8 +140,8 @@ public class EnemyMove2 : NetworkBehaviour
     //敵が目標座標に移動したかどうかの判定
     bool IsPosition(float x,float y)
     {
-        bool isposX = transform.position.x > x - 0.1f && transform.position.x < x + 0.1f;
-        bool isposY = transform.position.z > y - 0.1f && transform.position.z < y + 0.1f;
+        bool isposX = transform.position.x > x - 0.3f && transform.position.x < x + 0.3f;
+        bool isposY = transform.position.z > y - 0.3f && transform.position.z < y + 0.3f;
 
         if (isposX == true && isposY == true)
         {

@@ -19,27 +19,27 @@ public class Number_Create : NetworkBehaviour
     [SyncVar]
     int Rand_num3;
 
-    int number = 1995;
+    [SyncVar]
+    int number1;
+    int number2;
+    int number3;
+
+    [SyncVar]//問題の色の順番
+    public int arrayColor1;
+    public int arrayColor2;
+    public int arrayColor3;
+    [SyncVar]//問題の演算子の順番
+    public int arrayOperator1;
+    public int arrayOperator2;
+
     // Use this for initialization
     void Start () {
 
         Random_num();
 
-        Create_num(Number_pos1,Rand_num1,1234,1);
-        Create_num(Number_pos2,Rand_num1, 5678,2);
-        Create_num(Number_pos3,Rand_num1, 9012,3);
-
-        //int num1 = Random.Range(0, Number_pos1.Length - 1);
-        //int num2 = Random.Range(0, Number_pos2.Length - 1);
-        //int num3 = Random.Range(0, Number_pos3.Length - 1);
-
-        //GameObject obj1 = Instantiate(Number_obj, Number_pos1[num1].transform.position, Number_pos1[num1].transform.rotation);
-        //GameObject obj2 = Instantiate(Number_obj, Number_pos2[num2].transform.position, Number_pos2[num2].transform.rotation);
-        //GameObject obj3 = Instantiate(Number_obj, Number_pos3[num3].transform.position, Number_pos3[num3].transform.rotation);
-
-        //obj1.transform.parent = this.transform;
-        //obj2.transform.parent = this.transform;
-        //obj3.transform.parent = this.transform;
+        Create_num(Number_pos1,Rand_num1,number1,1);
+        Create_num(Number_pos2,Rand_num2,number2,2);
+        Create_num(Number_pos3,Rand_num3,number3,3);
     }
 	
 	// Update is called once per frame
@@ -53,6 +53,27 @@ public class Number_Create : NetworkBehaviour
         Rand_num1 = Random.Range(0, Number_pos1.Length - 1);
         Rand_num2 = Random.Range(0, Number_pos2.Length - 1);
         Rand_num3 = Random.Range(0, Number_pos3.Length - 1);
+
+        number1 = Random.Range(11, 99);
+        number2 = Random.Range(11, 99);
+        number3 = Random.Range(11, 99);
+
+        int[] arrayColor = { 1, 2, 3 };
+        //色のランダム入れ替え
+        for (int i = 0; i < arrayColor.Length; i++)
+        {
+            int j = Random.Range(0, arrayColor.Length - 1);
+            int t = arrayColor[i];
+            arrayColor[i] = arrayColor[j];
+            arrayColor[j] = t;
+        }
+
+        arrayColor1 = arrayColor[0];
+        arrayColor2 = arrayColor[1];
+        arrayColor3 = arrayColor[2];
+
+        arrayOperator1 = Random.Range(0, 1);
+        arrayOperator2 = Random.Range(0, 1);
     }
 
     //[Command]

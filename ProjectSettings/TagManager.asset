@@ -7,6 +7,7 @@ TagManager:
   - Camera
   - Enemy
   - Maze
+  - Door
   layers:
   - Default
   - TransparentFX

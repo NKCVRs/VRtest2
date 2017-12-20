@@ -90,6 +90,7 @@
     <Compile Include="Assets\Dive\Scripts\OffsetCenter.cs" />
     <Compile Include="Assets\Dive\Scripts\OpenDiveSensor.cs" />
     <Compile Include="Assets\Maze\Attacks.cs" />
+    <Compile Include="Assets\Maze\Code_Input.cs" />
     <Compile Include="Assets\Maze\Damage.cs" />
     <Compile Include="Assets\Maze\EnemyGenerator.cs" />
     <Compile Include="Assets\Maze\EnemyMove.cs" />
