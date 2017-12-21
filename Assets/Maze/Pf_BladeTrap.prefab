@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114937898207241718}
   m_Layer: 0
   m_Name: Pf_BladeTrap
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114485146166982884}
   m_Layer: 0
   m_Name: Blade
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

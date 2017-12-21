@@ -18,6 +18,7 @@ public class trapset : NetworkBehaviour {
     private Vector3 clickPosition;
     [SerializeField]
     private GameObject pa;
+    Inventory invent;
     //public Camera ca;
     //Maze_Create Maze_scr;
     //int[,] maze_arrey;
@@ -46,10 +47,18 @@ public class trapset : NetworkBehaviour {
         Bladeremain = 5;
         Spearremain = 5;
         tset = Set.None;
+        invent = GameObject.Find("Invents").GetComponent<Inventory>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (invent)
+        {
+            Cutterremain = invent.Cutters;
+            Needleremain = invent.Needles;
+            Bladeremain = invent.Blades;
+            Spearremain = invent.Spears;
+        }
         keyInput();
     }
     void keyInput()

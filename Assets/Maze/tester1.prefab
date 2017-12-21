@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 81179121174952828}
   m_Layer: 0
   m_Name: FirstPersonCharacter
-  m_TagString: MainCamera
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -650,6 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterHP: 100
   maxhp: 100
+  pa: {fileID: 0}
 --- !u!136 &136782912213464576
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -39,16 +39,6 @@ public class Status : MonoBehaviour {
             Dead();
         }
 	}
-    void OnTriggerEnter(Collider col)
-    {
-        //if (gameObject.tag == "Player")
-        //{
-        //    if (col.gameObject.tag == "item")
-        //    {
-
-        //    }
-        //}
-    }
     public void Damages(float damage)
     {
         time = 0;

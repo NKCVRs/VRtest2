@@ -11,6 +11,8 @@ public class Damage : NetworkBehaviour {
     private float hp = 3;
     [SyncVar]
     private Vector3 nowPos;
+
+    private float time;
 	// Use this for initialization
 	void Start () {
         nowPos = gameObject.transform.position;
@@ -18,6 +20,14 @@ public class Damage : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        time += Time.deltaTime;
+        if (gameObject.tag == "Trap")
+        {
+            if (time >= 60)//60秒後に壊れます
+            {
+                Destroyed();
+            }
+        }
         if (hp <= 0)
         {
             Destroyed();
