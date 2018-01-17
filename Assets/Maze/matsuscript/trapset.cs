@@ -10,6 +10,7 @@ public class trapset : NetworkBehaviour {
     private int Needleremain;
     private int Bladeremain;
     private int Spearremain;
+    private int Fireremain;
     public GameObject CutterTrap;
     public GameObject NeedleTrap;
     public GameObject BladeTrap;
@@ -46,6 +47,7 @@ public class trapset : NetworkBehaviour {
         Needleremain = 5;
         Bladeremain = 5;
         Spearremain = 5;
+        Fireremain = 0;
         tset = Set.None;
         invent = GameObject.Find("Invents").GetComponent<Inventory>();
 	}
@@ -58,6 +60,7 @@ public class trapset : NetworkBehaviour {
             Needleremain = invent.Needles;
             Bladeremain = invent.Blades;
             Spearremain = invent.Spears;
+            Fireremain = invent.Fires;
         }
         keyInput();
     }
@@ -116,7 +119,8 @@ public class trapset : NetworkBehaviour {
             case Set.CUTTER:
                 if (Cutterremain > 0)
                 {
-                    Cutterremain -= 1;
+                    //Cutterremain -= 1;
+                    invent.Cutters -= 1;
                     GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
@@ -128,7 +132,8 @@ public class trapset : NetworkBehaviour {
             case Set.NEEDLE:
                 if (Needleremain > 0)
                 {
-                    Needleremain -= 1;
+                    //Needleremain -= 1;
+                    invent.Needles -= 1;
                     GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
@@ -140,7 +145,8 @@ public class trapset : NetworkBehaviour {
             case Set.BLADE:
                 if (Bladeremain>0)
                 {
-                    Bladeremain -= 1;
+                    //Bladeremain -= 1;
+                    invent.Blades -= 1;
                     GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
                 }
@@ -152,7 +158,8 @@ public class trapset : NetworkBehaviour {
             case Set.SPEAR:
                 if (Spearremain > 0)
                 {
-                    Spearremain -= 1;
+                    //Spearremain -= 1;
+                    invent.Spears -= 1;
                     clickPosition.y = 1f;
                     GameObject obj=Instantiate(SetPrefab, clickPosition, SetPrefab.transform.rotation);
                     NetworkServer.Spawn(obj);
@@ -189,9 +196,13 @@ public class trapset : NetworkBehaviour {
     }
     public void Supply()
     {
-        Cutterremain += 5;
-        Needleremain += 5;
-        Bladeremain += 5;
-        Spearremain += 5;
+        //Cutterremain += 5;
+        //Needleremain += 5;
+        //Bladeremain += 5;
+        //Spearremain += 5;
+        invent.Cutters += 5;
+        invent.Needles += 5;
+        invent.Blades += 5;
+        invent.Spears += 5;
     }
 }

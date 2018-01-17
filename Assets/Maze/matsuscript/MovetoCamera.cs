@@ -17,7 +17,10 @@ public class MovetoCamera : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.W))
         {
-            gameObject.transform.position +=new Vector3(0,0,0.5f);
+            if (gameObject.transform.position.z<21&&gameObject.transform.position.z >= 0)
+            {
+                gameObject.transform.position += new Vector3(0, 0, 0.5f);
+            }
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -25,7 +28,10 @@ public class MovetoCamera : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.S))
         {
-            gameObject.transform.position += new Vector3(0, 0, -0.5f);
+            if (gameObject.transform.position.z <= 21 && gameObject.transform.position.z > 0)
+            {
+                gameObject.transform.position += new Vector3(0, 0, -0.5f);
+            }
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -41,7 +47,7 @@ public class MovetoCamera : MonoBehaviour {
         }
         else if (val < 0.0f)
         {
-            if (Camera.main.orthographicSize >= 4)
+            if (12>= Camera.main.orthographicSize&& Camera.main.orthographicSize >= 4)
             {
                 Camera.main.orthographicSize += 1;
             }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Attacks : MonoBehaviour {
     public float attack=34;
-	// Use this for initialization
-	void Start () {
+    public float Additional_damage;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -15,10 +16,19 @@ public class Attacks : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "player")
+        if (col.gameObject.tag == "Player")
         {
             Status stat = col.gameObject.GetComponent<Status>();
             stat.Damages(attack);
         }
     }
-}
+    void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Debug.Log("fire!");
+            Status stat = other.gameObject.GetComponent<Status>();
+            stat.Damages(attack);
+        }
+    }
+    }

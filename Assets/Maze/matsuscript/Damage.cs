@@ -42,6 +42,15 @@ public class Damage : NetworkBehaviour {
             hp -= 1;
         }
     }
+    void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Debug.Log("fire!");
+            Status stat = other.gameObject.GetComponent<Status>();
+            stat.Damages(damage);
+        }
+    }
     void Destroyed()
     {
         Destroy(gameObject.transform.parent.gameObject);
