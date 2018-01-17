@@ -19,47 +19,74 @@ Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\sandboxtest_Data\Manag
 Loading C:\Users\root\Documents\GitHub\VRtest2\sandboxtest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\sandboxtest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\root\Documents\GitHub\VRtest2\sandboxtest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.048 seconds
+- Completed reload, in  0.030 seconds
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\sandboxtest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\root\Documents\GitHub\VRtest2\sandboxtest_Data\Managed\System.dll (this message is harmless)
 desktop: 2560x1440 59Hz; virtual: 2560x1440 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.714524 ms
+UnloadTime: 1.767141 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 23dc -> priority: 1 
-  Thread -> id: 1a54 -> priority: 1 
+  Thread -> id: 950 -> priority: 1 
+  Thread -> id: 1e54 -> priority: 1 
 I am Client
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-(9.0, 0.5, 12.0)
+(9.0, 0.5, 1.0)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Damage.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+トラップを選んでください
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Damage.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+(9.0, 0.5, 1.0)
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Damage.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+(10.0, 0.5, 1.0)
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Damage.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+(11.0, 0.5, 1.0)
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Damage.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+(11.0, 0.5, 2.0)
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(9.0, 0.5, 2.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(9.0, 0.5, 3.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+在庫がありません
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(9.0, 0.5, 3.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+在庫がありません
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(9.0, 0.5, 3.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(10.0, 0.5, 3.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(11.0, 0.5, 3.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
