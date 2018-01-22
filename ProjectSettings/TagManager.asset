@@ -9,6 +9,7 @@ TagManager:
   - Maze
   - Door
   - Trap
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - UI2
   - 
   - 
   - 
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PUI
+    uniqueID: 3821492605
     locked: 0

@@ -226,7 +226,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967263
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -650,7 +650,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterHP: 100
   maxhp: 100
-  pa: {fileID: 0}
+  pa: {fileID: 1205692218006108, guid: 144f0e40fe0bc1f47a293de435d8711b, type: 2}
+  pa2: {fileID: 1697257713970932, guid: c5e79f22018463b419072d4cd4ef866e, type: 2}
 --- !u!136 &136782912213464576
 CapsuleCollider:
   m_ObjectHideFlags: 1
